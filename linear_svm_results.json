@@ -1,0 +1,30 @@
+{
+  "description": "Linear soft-margin dual SVM; synthetic dataset; not clinical",
+  "train_rows": 5000,
+  "heldout_test_rows": 5000,
+  "raw_predictors": 26,
+  "encoded_predictors": 33,
+  "C": 1.0,
+  "tolerance": 0.003,
+  "solver": "feasible two-coordinate quadratic working set",
+  "converged": true,
+  "iterations": 76402,
+  "kkt_gap": 0.0028903946751998033,
+  "equality_residual": 0.0,
+  "support_vectors": 2892,
+  "margin_support_vectors": 36,
+  "dual_objective_max": 2877.873981373444,
+  "intercept": -0.2919698620465199,
+  "metrics": {
+    "accuracy": 0.7534,
+    "recall_seizure_1": 0.7014991181657848,
+    "specificity_no_seizure_0": 0.7964860907759883,
+    "precision_seizure_1": 0.7410340009315324,
+    "confusion_matrix_TN_FP_FN_TP": [
+      2176,
+      556,
+      677,
+      1591
+    ]
+  }
+}
