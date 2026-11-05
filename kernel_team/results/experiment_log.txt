@@ -1,0 +1,69 @@
+Class distribution: {
+  "train": {
+    "n": 5000,
+    "class_0": 2819,
+    "class_1": 2181,
+    "positive_rate": 0.4362
+  },
+  "test": {
+    "n": 5000,
+    "class_0": 2732,
+    "class_1": 2268,
+    "positive_rate": 0.4536
+  },
+  "note": "Mild class imbalance (~44% positive in train). Accuracy alone can mislead; prioritize seizure-positive recall and F1."
+}
+Encoded feature dim: 33
+Running 6 primary kernel configurations...
+
+=== linear ===
+  acc=0.7534  prec=0.7410340009315324  rec=0.7014991181657848  f1=0.7207248018120046  SVs=2892  converged=True  iters=76402  time=6.9s
+
+=== poly_d2 ===
+  acc=0.7450  prec=0.7306084533209475  rec=0.6935626102292769  f1=0.7116037095679709  SVs=2916  converged=True  iters=10507  time=1.1s
+
+=== poly_d3 ===
+  acc=0.7354  prec=0.7219351808360732  rec=0.677689594356261  f1=0.6991130316124631  SVs=3006  converged=True  iters=17073  time=2.0s
+
+=== rbf_g0.01 ===
+  acc=0.7524  prec=0.7426955702167767  rec=0.6948853615520282  f1=0.717995444191344  SVs=3048  converged=True  iters=2466  time=0.5s
+
+=== rbf_g0.1 ===
+  acc=0.7456  prec=0.7405797101449275  rec=0.6759259259259259  f1=0.706777316735823  SVs=4246  converged=True  iters=4976  time=0.7s
+
+=== rbf_g1.0 ===
+  acc=0.5464  prec=None  rec=0.0  f1=None  SVs=5000  converged=True  iters=9017  time=1.2s
+
+Best nonlinear (primary): rbf_g0.01 (F1=0.717995444191344, recall=0.6948853615520282)
+
+=== follow-up rbf_g0.01_C0.1 ===
+  acc=0.7548  rec=0.6803350970017636  f1=0.715677179962894  converged=True  time=0.4s
+
+=== follow-up rbf_g0.01_C10.0 ===
+  acc=0.7428  rec=0.6900352733686067  f1=0.708786231884058  converged=True  time=1.6s
+
+=== follow-up rbf_g0.00333333_C1 ===
+  acc=0.7546  rec=0.6957671957671958  f1=0.7200547570157426  converged=True  time=0.4s
+
+=== follow-up rbf_g0.03_C1 ===
+  acc=0.7450  rec=0.6887125220458554  f1=0.710161400318254  converged=True  time=0.6s
+
+===== SUMMARY =====
+{
+  "name": "linear",
+  "kernel": "linear",
+  "kernel_params": {},
+  "C": 1.0,
+  "accuracy": 0.7534,
+  "precision_seizure_1": 0.7410340009315324,
+  "recall_seizure_1": 0.7014991181657848,
+  "f1_seizure_1": 0.7207248018120046,
+  "confusion_matrix_TN_FP_FN_TP": [
+    2176,
+    556,
+    677,
+    1591
+  ]
+}
+
+Wrote results to /Users/snehathomas/math582_SVM/kernel_team/results
