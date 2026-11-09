@@ -1,0 +1,407 @@
+{
+  "description": "Kernel soft-margin dual SVM on the student placement data.",
+  "class_distribution": {
+    "train_full": {
+      "n": 45000,
+      "class_neg1": 28688,
+      "class_pos1": 16312,
+      "positive_rate": 0.3624888888888889
+    },
+    "train_used": {
+      "n": 5000,
+      "class_neg1": 3188,
+      "class_pos1": 1812,
+      "positive_rate": 0.3624
+    },
+    "test": {
+      "n": 5000,
+      "class_neg1": 3188,
+      "class_pos1": 1812,
+      "positive_rate": 0.3624
+    }
+  },
+  "train_subsample": {
+    "rows": 5000,
+    "seed": 0,
+    "method": "class-stratified random subsample"
+  },
+  "label_encoding": "CSV labels are -1/+1 and are used directly in the dual",
+  "primary_results": [
+    {
+      "name": "linear",
+      "kernel": "linear",
+      "kernel_params": {},
+      "C": 1.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.872,
+      "precision_pos": 0.8202185792349727,
+      "recall_pos": 0.8283664459161147,
+      "f1_pos": 0.8242723778143877,
+      "specificity_neg": 0.8968005018820577,
+      "confusion_matrix_TN_FP_FN_TP": [
+        2859,
+        329,
+        311,
+        1501
+      ],
+      "training_time_sec": 2.379979999968782,
+      "support_vectors": 1664,
+      "margin_support_vectors": 22,
+      "converged": true,
+      "iterations": 18857,
+      "kkt_gap": 0.002979866408035159,
+      "equality_residual": 3.552713678800501e-15,
+      "dual_objective_max": 1652.5986564816421,
+      "intercept": -1.125796836863675
+    },
+    {
+      "name": "poly_d2",
+      "kernel": "polynomial",
+      "kernel_params": {
+        "degree": 2,
+        "gamma": 0.05,
+        "coef0": 1.0
+      },
+      "C": 1.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.9566,
+      "precision_pos": 0.9365079365079365,
+      "recall_pos": 0.9442604856512141,
+      "f1_pos": 0.9403682330310525,
+      "specificity_neg": 0.9636135508155583,
+      "confusion_matrix_TN_FP_FN_TP": [
+        3072,
+        116,
+        101,
+        1711
+      ],
+      "training_time_sec": 0.7892657998017967,
+      "support_vectors": 1077,
+      "margin_support_vectors": 99,
+      "converged": true,
+      "iterations": 2601,
+      "kkt_gap": 0.00293460729280437,
+      "equality_residual": 5.329070518200751e-15,
+      "dual_objective_max": 824.5350686691218,
+      "intercept": 0.3377176311151913
+    },
+    {
+      "name": "poly_d3",
+      "kernel": "polynomial",
+      "kernel_params": {
+        "degree": 3,
+        "gamma": 0.05,
+        "coef0": 1.0
+      },
+      "C": 1.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.9674,
+      "precision_pos": 0.9527732015376167,
+      "recall_pos": 0.9575055187637969,
+      "f1_pos": 0.9551334984860996,
+      "specificity_neg": 0.9730238393977415,
+      "confusion_matrix_TN_FP_FN_TP": [
+        3102,
+        86,
+        77,
+        1735
+      ],
+      "training_time_sec": 0.8807236000429839,
+      "support_vectors": 837,
+      "margin_support_vectors": 166,
+      "converged": true,
+      "iterations": 3522,
+      "kkt_gap": 0.0028337956771555817,
+      "equality_residual": 2.6645352591003757e-15,
+      "dual_objective_max": 569.4553199279488,
+      "intercept": 0.8136390954625413
+    },
+    {
+      "name": "rbf_g0.01",
+      "kernel": "rbf",
+      "kernel_params": {
+        "gamma": 0.01
+      },
+      "C": 1.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.9244,
+      "precision_pos": 0.8817891373801917,
+      "recall_pos": 0.9139072847682119,
+      "f1_pos": 0.8975609756097561,
+      "specificity_neg": 0.9303638644918444,
+      "confusion_matrix_TN_FP_FN_TP": [
+        2966,
+        222,
+        156,
+        1656
+      ],
+      "training_time_sec": 0.6030725000891834,
+      "support_vectors": 1544,
+      "margin_support_vectors": 35,
+      "converged": true,
+      "iterations": 1018,
+      "kkt_gap": 0.00229890245100961,
+      "equality_residual": 3.552713678800501e-15,
+      "dual_objective_max": 1298.4311591586636,
+      "intercept": -9.42802813007561
+    },
+    {
+      "name": "rbf_g0.1",
+      "kernel": "rbf",
+      "kernel_params": {
+        "gamma": 0.1
+      },
+      "C": 1.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.97,
+      "precision_pos": 0.9570957095709571,
+      "recall_pos": 0.9602649006622517,
+      "f1_pos": 0.9586776859504132,
+      "specificity_neg": 0.9755332496863237,
+      "confusion_matrix_TN_FP_FN_TP": [
+        3110,
+        78,
+        72,
+        1740
+      ],
+      "training_time_sec": 0.7234326999168843,
+      "support_vectors": 1020,
+      "margin_support_vectors": 349,
+      "converged": true,
+      "iterations": 1997,
+      "kkt_gap": 0.002994338906331606,
+      "equality_residual": 1.7763568394002505e-15,
+      "dual_objective_max": 581.3024972810492,
+      "intercept": -2.0688677883777
+    },
+    {
+      "name": "rbf_g1.0",
+      "kernel": "rbf",
+      "kernel_params": {
+        "gamma": 1.0
+      },
+      "C": 1.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.7944,
+      "precision_pos": 0.9851485148514851,
+      "recall_pos": 0.4392935982339956,
+      "f1_pos": 0.6076335877862595,
+      "specificity_neg": 0.9962358845671268,
+      "confusion_matrix_TN_FP_FN_TP": [
+        3176,
+        12,
+        1016,
+        796
+      ],
+      "training_time_sec": 1.3972185000311583,
+      "support_vectors": 4981,
+      "margin_support_vectors": 3894,
+      "converged": true,
+      "iterations": 7043,
+      "kkt_gap": 0.002996047617284947,
+      "equality_residual": 7.105427357601002e-15,
+      "dual_objective_max": 1720.7607873117804,
+      "intercept": -0.39505610355693416
+    }
+  ],
+  "followup_results": [
+    {
+      "name": "rbf_g0.1_C0.1",
+      "kernel": "rbf",
+      "kernel_params": {
+        "gamma": 0.1
+      },
+      "C": 0.1,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.946,
+      "precision_pos": 0.9273835920177383,
+      "recall_pos": 0.923289183222958,
+      "f1_pos": 0.9253318584070797,
+      "specificity_neg": 0.9589084065244667,
+      "confusion_matrix_TN_FP_FN_TP": [
+        3057,
+        131,
+        139,
+        1673
+      ],
+      "training_time_sec": 0.5518970999401063,
+      "support_vectors": 1785,
+      "margin_support_vectors": 71,
+      "converged": true,
+      "iterations": 1055,
+      "kkt_gap": 0.0027209098082467964,
+      "equality_residual": 6.661338147750939e-16,
+      "dual_objective_max": 134.98112799172296,
+      "intercept": -1.107280260582788
+    },
+    {
+      "name": "rbf_g0.1_C10",
+      "kernel": "rbf",
+      "kernel_params": {
+        "gamma": 0.1
+      },
+      "C": 10.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.9792,
+      "precision_pos": 0.9733924611973392,
+      "recall_pos": 0.9690949227373068,
+      "f1_pos": 0.9712389380530972,
+      "specificity_neg": 0.9849435382685069,
+      "confusion_matrix_TN_FP_FN_TP": [
+        3140,
+        48,
+        56,
+        1756
+      ],
+      "training_time_sec": 1.1657510998193175,
+      "support_vectors": 726,
+      "margin_support_vectors": 642,
+      "converged": true,
+      "iterations": 5574,
+      "kkt_gap": 0.002934464422345684,
+      "equality_residual": 1.0658141036401503e-14,
+      "dual_objective_max": 1504.6102679772605,
+      "intercept": -3.042790536718136
+    },
+    {
+      "name": "rbf_g0.0333_C1",
+      "kernel": "rbf",
+      "kernel_params": {
+        "gamma": 0.03333333333333333
+      },
+      "C": 1.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.9578,
+      "precision_pos": 0.9415333701047987,
+      "recall_pos": 0.9420529801324503,
+      "f1_pos": 0.9417931034482758,
+      "specificity_neg": 0.966750313676286,
+      "confusion_matrix_TN_FP_FN_TP": [
+        3082,
+        106,
+        105,
+        1707
+      ],
+      "training_time_sec": 0.5750200001057237,
+      "support_vectors": 1183,
+      "margin_support_vectors": 106,
+      "converged": true,
+      "iterations": 1241,
+      "kkt_gap": 0.002997214620752864,
+      "equality_residual": 7.105427357601002e-15,
+      "dual_objective_max": 883.3991585106367,
+      "intercept": -5.293075596106244
+    },
+    {
+      "name": "rbf_g0.3_C1",
+      "kernel": "rbf",
+      "kernel_params": {
+        "gamma": 0.30000000000000004
+      },
+      "C": 1.0,
+      "train_rows": 5000,
+      "test_rows": 5000,
+      "features": 20,
+      "accuracy": 0.9694,
+      "precision_pos": 0.9636668529904975,
+      "recall_pos": 0.9514348785871964,
+      "f1_pos": 0.9575118022771452,
+      "specificity_neg": 0.9796110414052698,
+      "confusion_matrix_TN_FP_FN_TP": [
+        3123,
+        65,
+        88,
+        1724
+      ],
+      "training_time_sec": 0.8557158997282386,
+      "support_vectors": 1963,
+      "margin_support_vectors": 1590,
+      "converged": true,
+      "iterations": 3328,
+      "kkt_gap": 0.002990174705798432,
+      "equality_residual": 1.7763568394002505e-15,
+      "dual_objective_max": 551.4909744407819,
+      "intercept": -0.6418476008043253
+    }
+  ],
+  "best_primary": {
+    "name": "rbf_g0.1",
+    "kernel": "rbf",
+    "kernel_params": {
+      "gamma": 0.1
+    },
+    "C": 1.0,
+    "train_rows": 5000,
+    "test_rows": 5000,
+    "features": 20,
+    "accuracy": 0.97,
+    "precision_pos": 0.9570957095709571,
+    "recall_pos": 0.9602649006622517,
+    "f1_pos": 0.9586776859504132,
+    "specificity_neg": 0.9755332496863237,
+    "confusion_matrix_TN_FP_FN_TP": [
+      3110,
+      78,
+      72,
+      1740
+    ],
+    "training_time_sec": 0.7234326999168843,
+    "support_vectors": 1020,
+    "margin_support_vectors": 349,
+    "converged": true,
+    "iterations": 1997,
+    "kkt_gap": 0.002994338906331606,
+    "equality_residual": 1.7763568394002505e-15,
+    "dual_objective_max": 581.3024972810492,
+    "intercept": -2.0688677883777
+  },
+  "best_nonlinear_primary": {
+    "name": "rbf_g0.1",
+    "kernel": "rbf",
+    "kernel_params": {
+      "gamma": 0.1
+    },
+    "C": 1.0,
+    "train_rows": 5000,
+    "test_rows": 5000,
+    "features": 20,
+    "accuracy": 0.97,
+    "precision_pos": 0.9570957095709571,
+    "recall_pos": 0.9602649006622517,
+    "f1_pos": 0.9586776859504132,
+    "specificity_neg": 0.9755332496863237,
+    "confusion_matrix_TN_FP_FN_TP": [
+      3110,
+      78,
+      72,
+      1740
+    ],
+    "training_time_sec": 0.7234326999168843,
+    "support_vectors": 1020,
+    "margin_support_vectors": 349,
+    "converged": true,
+    "iterations": 1997,
+    "kkt_gap": 0.002994338906331606,
+    "equality_residual": 1.7763568394002505e-15,
+    "dual_objective_max": 581.3024972810492,
+    "intercept": -2.0688677883777
+  }
+}
